@@ -1,0 +1,47 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Please Login or register below</h1>
+</div>
+@if (Model.IsLoggedIn)
+{
+    <div class="row">
+        <div class="col-lg-1">
+            <h1>Welcome Back @Model.Username</h1>
+        </div>
+    </div>
+}
+else
+{
+    
+
+
+
+@if (Model.Error != null)
+{
+    <div class="alert-danger"><p>@Model.Error</p></div>
+}
+<div class="row">
+    <div class="col-lg-1">
+        <form method="post">
+            <label asp-for="Username"></label>
+            <input type="text" name="Username">
+            <span asp-validation-for="Username"></span>
+                        <label asp-for="Password"></label>
+            <input type="password" name="Password">
+            <span asp-validation-for="Password"></span>
+
+            <button class="btn btn-default" asp-page-handler="Login">Login</button>
+            <button class="btn btn-default" asp-page-handler="Register">Register</button>
+        </form>
+    </div>
+
+</div>
+
+
+}
+
