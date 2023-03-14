@@ -17,11 +17,16 @@ public class CarService {
 		
 		Car car = new Car();
 		
+		
 		car.setColour("BLUE");
 		car.setContractEnd("CONTRACT");
 		
+		Car newCar = new Car();
+		newCar.setColour("RED");
+		car.setContractEnd("CONTRACT2");
 		List<Car> cars = new ArrayList<Car>();
 		cars.add(car);
+		cars.add(newCar);
 
 		//List<Car> cars = carRepository.findAll();
 

@@ -15,7 +15,7 @@ public class Car {
 //	@Id
 	//@Coumn(name = "ID")
 	@JsonProperty("Id")
-	private Integer Id;
+	private Integer id;
 
 	@JsonProperty("manufacturer")
 	//@Coumn(name = "Manufacturer")
@@ -74,11 +74,11 @@ public class Car {
 	}
 
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		id = id;
 	}
 
 	public String getManufacturer() {
