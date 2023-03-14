@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="CarService/CarService/src/main/java"/>
+	<classpathentry kind="src" path="CarService/CarService/src/test/java"/>
+	<classpathentry kind="src" path="CarService/src/main/java"/>
+	<classpathentry kind="src" path="CarService/src/test/java"/>
+	<classpathentry kind="src" path="CustomerService/src/main/java"/>
+	<classpathentry kind="src" path="CustomerService/src/test/java"/>
+	<classpathentry kind="src" path="SubscriptionService/src/main/java"/>
+	<classpathentry kind="src" path="SubscriptionService/src/test/java"/>
+	<classpathentry kind="lib" path="CarService/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="CarService/CarService/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="CustomerService/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="SubscriptionService/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -14,7 +14,8 @@ namespace HackFrontend.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly IConfiguration _configuration;
-        public IEnumerable<Cars> CarsIE { get; set;}
+        public IEnumerable<Cars> CarsIE { get; set; }
+        public string sortItem { get; set; }
         public CarsModel(ILogger<IndexModel> logger, IConfiguration configuration)
         {
             _logger = logger;
@@ -27,9 +28,21 @@ namespace HackFrontend.Pages
         {
             var aPiHelper = new ApiHelper(_configuration);
             var url = aPiHelper.GetUri("AuthenticationService");
-            var response = aPiHelper.SendApIrequest(url, Method.Post, User);
-            CarsIE =  JsonConvert.DeserializeObject <IEnumerable<Cars>>(response);
+            var response = aPiHelper.SendApIrequest(url, Method.Get );
+            CarsIE = JsonConvert.DeserializeObject<IEnumerable<Cars>>(response);
 
+
+            return Task.CompletedTask;
+        }
+        public Task OnPostType()
+        {
+            var par = new Dictionary<string, string>();
+            par.Add("Manufacturer", Request.Form["Manufacturer"]);
+            
+            var aPiHelper = new ApiHelper(_configuration);
+            var url = aPiHelper.GetUri("AuthenticationService");
+            var response = aPiHelper.SendApIrequest(url, Method.Post,par  );
+            CarsIE = JsonConvert.DeserializeObject<IEnumerable<Cars>>(response);
 
             return Task.CompletedTask;
         }
