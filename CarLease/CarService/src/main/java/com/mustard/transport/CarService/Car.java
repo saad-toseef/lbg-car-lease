@@ -2,71 +2,72 @@ package com.mustard.transport.CarService;
 
 import java.math.BigDecimal;
 
-//import javax.persistence.Column;
-//import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-//import javax.persistence.*;
+import javax.persistence.*;
 
-//@Entity
+@Table(name="Cars")
+@Entity
 public class Car {
 
-//	@Id
-	//@Coumn(name = "ID")
+	@Id
+	@Column(name = "ID")
 	@JsonProperty("Id")
 	private Integer id;
 
 	@JsonProperty("manufacturer")
-	//@Coumn(name = "Manufacturer")
+	@Column(name = "Manufacturer")
 	private String manufacturer;
 
 	@JsonProperty("model")
-	//@Coumn(name = "Model")
+	@Column(name = "Model")
 	private String model;
 
 	@JsonProperty("year")
-	//@Coumn(name = "Year")
+	@Column(name = "Year")
 	private Integer year;
 
 	@JsonProperty("description")
-	//@Coumn(name = "Description")
+	@Column(name = "Description")
 	private String description;
 
 	@JsonProperty("registration")
-	//@Coumn(name = "Registration")
+	@Column(name = "Registration")
 	private String registration;
 
 	@JsonProperty("colour")
-	//@Coumn(name = "Colour")
+	@Column(name = "Colour")
 	private String colour;
 
 	@JsonProperty("contractEnd")
-	//@Coumn(name = "ContractEnd")
+	@Column(name = "ContractEnd")
 	private String contractEnd;
 
 	@JsonProperty("term")
-	//@Coumn(name = "Term")
+	@Column(name = "Term")
 	private Integer term;
 
 	@JsonProperty("highestRecordedMileage")
-	//@Coumn(name = "HighestRecordedMileage")
+	@Column(name = "HighestRecordedMileage")
 	private Integer highestRecordedMileage;
 
 	@JsonProperty("hrmDate")
-	//@Coumn(name = "HRMDate")
+	@Column(name = "HRMDate")
 	private String hRMDate;
 
 	@JsonProperty("fuelType")
-	//@Coumn(name = "FuelType")
+	@Column(name = "FuelType")
 	private String fuelType;
 
 	@JsonProperty("engineSize")
-	//@Coumn(name = "EngineSize")
+	@Column(name = "EngineSize")
 	private String engineSize;
 
 	@JsonProperty("dayRate")
-	//@Coumn(name = "DayRate")
+	@Column(name = "DayRate")
 	private BigDecimal dayRate;
 
 	public Car() {

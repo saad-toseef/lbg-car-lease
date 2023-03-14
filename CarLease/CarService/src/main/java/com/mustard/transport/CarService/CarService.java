@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CarService {
 
-	// @Autowired
-	// private CarRepository carRepository;
+	@Autowired
+	private CarRepository carRepository;
 
 	public List<Car> getAllCars() {
 
@@ -29,7 +28,10 @@ public class CarService {
 			cars.add(car);
 		}
 
-		// List<Car> cars = carRepository.findAll();
+		 List<Car> carses = carRepository.findAll();
+		 
+		 for(Car car : carses)
+			 System.out.println(car.getColour());
 
 		return cars;
 
