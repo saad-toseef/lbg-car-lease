@@ -6,15 +6,18 @@
 
 <div class="inner cover">
     @{
-            <div class="col-sm-4">
-                <h1>@Model.Car.model</h1>
-                <h2>@Model.Car.manufacturer</h2>
-                <h2>@Model.Car.year</h2>
-                <h2>@Model.Car.colour</h2>
-                <p>@Model.Car.description</p>
+        <div class="col-sm-4">
+            <img src="https://www.lexautolease.co.uk/content/atom/64bd0369-dde0-4429-bd8f-59ed913de60d/content/Vehicle%20Images/i3-banner.png?id=59cc1890-eca5-4cd1-8fde-447a54f10e50" />
+            <h1>Model: @Model.Car.model</h1>
+            <h2>Manufacturer: @Model.Car.manufacturer</h2>
+            <h2>Year: @Model.Car.year</h2>
+            <h2>Colour:@Model.Car.colour</h2>
+            <p>@Model.Car.description</p>
+            <p>@Model.Car.term</p>
+            <p>Location: Halifax</p>
 
-            </div>
+        </div>
+        <button> Book this car</button>
 
-        
     }
 </div>
