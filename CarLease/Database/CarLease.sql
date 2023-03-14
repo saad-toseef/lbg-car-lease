@@ -56,20 +56,52 @@ INSERT INTO `Customers` (`ID`, `FirstName`, `LastName`, `Address1` , `Address2` 
 	(4, 'David', 'Rockall', 'Address1' , 'Address2' , 'PC1 2CE' , '12345MP1323PFR2'),
     (5, 'Faizal', 'Patel', 'Address1' , 'Address2' , 'PC1 2CE' , '12345MP1323PFR2');
 
--- Creating table structure for table CarLease.Plans
-DROP TABLE IF EXISTS `Plans`;
-CREATE TABLE IF NOT EXISTS `Plans` (
+-- Creating table structure for table CarLease.Subscriptions
+DROP TABLE IF EXISTS `Subscriptions`;
+CREATE TABLE IF NOT EXISTS `Subscriptions` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Description` varchar(50) NOT NULL,
-  `Duration` int(2) NOT NULL,
-  `PlanValue` DECIMAL(6,2) NULL,
-  `AdminFee` DECIMAL(4,2) NULL,
-  `Discount` DECIMAL(4,2) NULL,
-  PRIMARY KEY (`id`)
+  `Cost` DECIMAL(6,2) NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table CarLease.Customers
-INSERT INTO `Plans` (`ID`, `Description`, `Duration`, `PlanValue` , `AdminFee` , `Discount`) VALUES
-	(1, 'Flex Monthly Rolling', 30, 500 , 30 , NULL),
-    (2, 'Pay As You Drive', 1 , NULL , 20 , NULL);
-    
+-- Dumping data for table CarLease.Subscriptions
+INSERT INTO `Subscriptions` (`ID`, `Description`, `Cost`) VALUES
+	(1, 'Bronze', 500),
+    (2, 'Silver', 750),
+    (3, 'Gold', 1000);
+        
+ -- Creating table structure for table CarLease.CustomerSubscriptions
+DROP TABLE IF EXISTS `CustomerSubscriptions`;
+CREATE TABLE IF NOT EXISTS `CustomerSubscriptions` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `CustomerID` int(11) NOT NULL,
+  `SubscriptionsID` int(11) NOT NULL,
+  `Balance` DECIMAL(6,2) NULL,
+    PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table CarLease.Subscriptions
+INSERT INTO `CustomerSubscriptions` (`ID`, `CustomerID`, `SubscriptionsID` , `Balance`) VALUES
+	(1, 1, 1 , 0),
+    (2, 2, 1 , 500),
+    (3, 3, 2, 750),
+    (4, 4, 3, 1000);
+
+ -- Creating table structure for table CarLease.Hire
+DROP TABLE IF EXISTS `Hire`;
+CREATE TABLE IF NOT EXISTS `Hire` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `CarID` int(11) NOT NULL,
+  `CustomerID` int(11) NOT NULL,
+  `SubscriptionsID` int(11) NOT NULL,
+  `TotalCost` DECIMAL(8,2)  NOT NULL,
+  `Duration` smallint NULL,
+    PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table CarLease.Hire
+INSERT INTO `Hire` (`ID`, `CarID` ,`CustomerID`, `SubscriptionsID` , `TotalCost` ,`Duration` ) VALUES
+	(1, 1, 1 , 1, 500 , 30),
+    (2, 2, 2 , 2, 750 , 15),
+    (3, 3, 3 , 2, 750 , 10);
