@@ -1,0 +1,19 @@
+﻿@page
+@model CarModel
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<div class="inner cover">
+    @{
+            <div class="col-sm-4">
+                <h1>@Model.Car.Model</h1>
+                <h2>@Model.Car.Manufacture</h2>
+                <h2>@Model.Car.Year</h2>
+                <h2>@Model.Car.Colour</h2>
+
+            </div>
+
+        
+    }
+</div>
