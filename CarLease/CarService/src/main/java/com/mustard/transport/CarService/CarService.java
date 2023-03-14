@@ -10,25 +10,26 @@ import org.springframework.stereotype.Service;
 @Service
 public class CarService {
 
-	//@Autowired
-	//private CarRepository carRepository;
+	// @Autowired
+	// private CarRepository carRepository;
 
 	public List<Car> getAllCars() {
-		
-		Car car = new Car();
-		
-		
-		car.setColour("BLUE");
-		car.setContractEnd("CONTRACT");
-		
-		Car newCar = new Car();
-		newCar.setColour("RED");
-		car.setContractEnd("CONTRACT2");
-		List<Car> cars = new ArrayList<Car>();
-		cars.add(car);
-		cars.add(newCar);
 
-		//List<Car> cars = carRepository.findAll();
+		List<Car> cars = new ArrayList<Car>();
+
+		for (int i = 1; i <= 10; i++) {
+
+			Car car = new Car();
+
+			car.setId(i);
+			car.setColour("MUSTARD");
+			car.setFuelType("ELECTRIC");
+			car.setManufacturer("FORD");
+			car.setModel("FOCUS " + i);
+			cars.add(car);
+		}
+
+		// List<Car> cars = carRepository.findAll();
 
 		return cars;
 
