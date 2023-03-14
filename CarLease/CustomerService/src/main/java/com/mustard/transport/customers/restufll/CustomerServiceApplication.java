@@ -1,4 +1,4 @@
-package com.mustard.transport.CustomerService;
+package com.mustard.transport.customers.restufll;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
