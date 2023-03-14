@@ -29,6 +29,8 @@ public class CarService {
 		}
 
 		 List<Car> carses = carRepository.findAll();
+		 
+		 System.out.println(carses.get(0).getColour());
 //		 
 //		 for(Car car : carses)
 //			 System.out.println(car.getColour());
