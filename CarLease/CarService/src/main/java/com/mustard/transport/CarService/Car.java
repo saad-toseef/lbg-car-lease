@@ -2,52 +2,71 @@ package com.mustard.transport.CarService;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
 
-@Entity
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+//import javax.persistence.*;
+
+//@Entity
 public class Car {
 
-	@Column(name = "ID")
+//	@Id
+	//@Coumn(name = "ID")
+	@JsonProperty("Id")
 	private Integer Id;
 
-	@Column(name = "Manufacturer")
+	@JsonProperty("manufacturer")
+	//@Coumn(name = "Manufacturer")
 	private String manufacturer;
 
-	@Column(name = "Model")
+	@JsonProperty("model")
+	//@Coumn(name = "Model")
 	private String model;
 
-	@Column(name = "Year")
+	@JsonProperty("year")
+	//@Coumn(name = "Year")
 	private Integer year;
 
-	@Column(name = "Description")
+	@JsonProperty("description")
+	//@Coumn(name = "Description")
 	private String description;
 
-	@Column(name = "Registration")
+	@JsonProperty("registration")
+	//@Coumn(name = "Registration")
 	private String registration;
 
-	@Column(name = "Colour")
+	@JsonProperty("colour")
+	//@Coumn(name = "Colour")
 	private String colour;
 
-	@Column(name = "ContractEnd")
+	@JsonProperty("contractEnd")
+	//@Coumn(name = "ContractEnd")
 	private String contractEnd;
 
-	@Column(name = "Term")
+	@JsonProperty("term")
+	//@Coumn(name = "Term")
 	private Integer term;
 
-	@Column(name = "HighestRecordedMileage")
+	@JsonProperty("highestRecordedMileage")
+	//@Coumn(name = "HighestRecordedMileage")
 	private Integer highestRecordedMileage;
 
-	@Column(name = "HRMDate")
+	@JsonProperty("hrmDate")
+	//@Coumn(name = "HRMDate")
 	private String hRMDate;
 
-	@Column(name = "FuelType")
+	@JsonProperty("fuelType")
+	//@Coumn(name = "FuelType")
 	private String fuelType;
 
-	@Column(name = "EngineSize")
+	@JsonProperty("engineSize")
+	//@Coumn(name = "EngineSize")
 	private String engineSize;
 
-	@Column(name = "DayRate")
+	@JsonProperty("dayRate")
+	//@Coumn(name = "DayRate")
 	private BigDecimal dayRate;
 
 	public Car() {

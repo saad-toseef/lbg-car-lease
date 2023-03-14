@@ -21,10 +21,19 @@ public class CarController {
 		
 		List<Car> cars = carService.getAllCars();
 		
-		
-		
+		System.out.println(cars.get(0).getColour());
+	
 		
 		return new ResponseEntity<>(cars,HttpStatus.OK);
 	}
+	
+//	@RequestMapping(value ="/Cars", method = RequestMethod.GET)
+//	public ResponseEntity<List<Car>> searchForCars(Car exampleCar){
+//		
+//		
+//		List<Car> cars = carService.getExampleCars(exampleCar);
+//		return new ResponseEntity<>(cars, HttpStatus.OK);
+//		
+//	}
 
 }
