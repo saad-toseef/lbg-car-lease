@@ -2,72 +2,66 @@ package com.mustard.transport.CarService;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.*;
 
-@Table(name="Cars")
-@Entity
 public class Car {
 
-	@Id
-	@Column(name = "ID")
+//	@Id
+	//@Column(name = "ID")
 	@JsonProperty("Id")
 	private Integer id;
 
 	@JsonProperty("manufacturer")
-	@Column(name = "Manufacturer")
+	//@Column(name = "Manufacturer")
 	private String manufacturer;
 
 	@JsonProperty("model")
-	@Column(name = "Model")
+	//@Column(name = "Model")
 	private String model;
 
 	@JsonProperty("year")
-	@Column(name = "Year")
+	//@Column(name = "Year")
 	private Integer year;
 
 	@JsonProperty("description")
-	@Column(name = "Description")
+	//@Column(name = "Description")
 	private String description;
 
 	@JsonProperty("registration")
-	@Column(name = "Registration")
+	//@Column(name = "Registration")
 	private String registration;
 
 	@JsonProperty("colour")
-	@Column(name = "Colour")
+	//@Column(name = "Colour")
 	private String colour;
 
 	@JsonProperty("contractEnd")
-	@Column(name = "ContractEnd")
+	//@Column(name = "ContractEnd")
 	private String contractEnd;
 
 	@JsonProperty("term")
-	@Column(name = "Term")
+	//@Column(name = "Term")
 	private Integer term;
 
 	@JsonProperty("highestRecordedMileage")
-	@Column(name = "HighestRecordedMileage")
+	//@Column(name = "HighestRecordedMileage")
 	private Integer highestRecordedMileage;
 
 	@JsonProperty("hrmDate")
-	@Column(name = "HRMDate")
+	//@Column(name = "HRMDate")
 	private String hRMDate;
 
 	@JsonProperty("fuelType")
-	@Column(name = "FuelType")
+	//@Column(name = "FuelType")
 	private String fuelType;
 
 	@JsonProperty("engineSize")
-	@Column(name = "EngineSize")
+	//@Column(name = "EngineSize")
 	private String engineSize;
 
 	@JsonProperty("dayRate")
-	@Column(name = "DayRate")
+	//@Column(name = "DayRate")
 	private BigDecimal dayRate;
 
 	public Car() {
