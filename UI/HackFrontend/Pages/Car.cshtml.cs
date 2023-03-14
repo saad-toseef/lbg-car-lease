@@ -30,7 +30,7 @@ namespace HackFrontend.Pages
             par.Add("ID", ID.ToString());
             var aPiHelper = new ApiHelper(_configuration);
             var url = aPiHelper.GetUri("Cars");
-            var response = aPiHelper.SendApIrequest(url, Method.Get, par);
+            var response = aPiHelper.SendApIrequest(url + "\\"  + @ID, Method.Get, null, null);
             Car = JsonConvert.DeserializeObject<Cars>(response);
 
 

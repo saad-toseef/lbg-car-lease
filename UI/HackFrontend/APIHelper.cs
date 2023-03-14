@@ -20,7 +20,7 @@ namespace HackFrontend
          return  _configuration.GetConnectionString(serviceName);
         }
 
-        public string SendApIrequest(string url, Method method, Object @object = null)
+        public string SendApIrequest(string url, Method method, Object @object = null, Dictionary<string,string> paremter = null)
         {
             Uri baseUrl = new Uri( url);
             RestClient client = new RestClient(baseUrl);
@@ -31,6 +31,14 @@ namespace HackFrontend
                 request.AddJsonBody(@object);
 
 
+            }
+            if (paremter != null)
+            {
+                foreach (var pair in paremter)
+                {
+                    request.AddQueryParameter(pair.Key,pair.Value);
+
+                }
             }
             RestResponse response = client.Execute(request);
             if (response.IsSuccessful())
