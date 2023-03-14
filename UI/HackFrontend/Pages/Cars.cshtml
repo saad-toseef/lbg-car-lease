@@ -6,9 +6,32 @@
 
 <div class="inner cover">
     @{
-        foreach( var car in Model.CarsIE )
+        <button type="submit" asp-page-handler="All">Get All</button>
+
+
+        <form asp-page-handler="Type" asp-action="post" >
+            <label>Choose a Manufacturer:</label>
+
+            <select  id="Manufacturer">
+                <option value="volvo">Volvo</option>
+                <option value="saab" >Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+            <button action="submit">Submit</button>
+        </form>
+
+        foreach (var car in Model.CarsIE)
         {
-            
+            <div class="col-sm-4">
+                <h1>@car.Model</h1>
+                <h2>@car.Manufacture</h2>
+                <h2>@car.Year</h2>
+                <h2>@car.Colour</h2>
+                <button class="btn btn-primary btn-sm" asp-page="./car" asp-route-id="@car.ID"></button>
+
+            </div>
+
         }
-        }
-        </div>
+    }
+</div>
