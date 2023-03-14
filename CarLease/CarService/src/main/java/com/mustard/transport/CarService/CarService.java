@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class CarService {
 
-	@Autowired
-	private CarRepository carRepository;
+	//@Autowired
+	//private CarRepository carRepository;
 
 	public List<Car> getAllCars() {
 
@@ -28,15 +28,28 @@ public class CarService {
 			cars.add(car);
 		}
 
-		 List<Car> carses = carRepository.findAll();
+		// List<Car> carses = carRepository.findAll();
 		 
-		 System.out.println(carses.get(0).getColour());
+		 //System.out.println(carses.get(0).getColour());
 //		 
 //		 for(Car car : carses)
 //			 System.out.println(car.getColour());
 
 		return cars;
 
+	}
+	
+	
+	public Car getById(Integer id) {
+		
+		Car car = new Car();
+		car.setId(id);
+		car.setColour("MUSTARD");
+		car.setFuelType("ELECTRIC");
+		car.setManufacturer("FORD");
+		car.setModel("FOCUS " + id);
+
+		return car;
 	}
 //	
 //	public List<Car> getExampleCars(Car exampleCar){
