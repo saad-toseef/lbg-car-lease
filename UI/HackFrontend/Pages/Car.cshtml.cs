@@ -29,7 +29,7 @@ namespace HackFrontend.Pages
             var par = new Dictionary<string, string>();
             par.Add("ID", ID.ToString());
             var aPiHelper = new ApiHelper(_configuration);
-            var url = aPiHelper.GetUri("Car");
+            var url = aPiHelper.GetUri("Cars");
             var response = aPiHelper.SendApIrequest(url, Method.Get, par);
             Car = JsonConvert.DeserializeObject<Cars>(response);
 

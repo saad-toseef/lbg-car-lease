@@ -1,5 +1,6 @@
 ﻿using HackFrontend.Objects;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -13,6 +14,8 @@ namespace HackFrontend.Pages
 {
     public class CarsModel : PageModel
     {
+        [BindProperty]
+        public string Manufacturer { get; set; }
         private readonly ILogger<IndexModel> _logger;
         private readonly IConfiguration _configuration;
         public List<Cars> CarsIE { get; set; }
@@ -35,13 +38,13 @@ namespace HackFrontend.Pages
 
             return Task.CompletedTask;
         }
-        public Task OnPostType()
+        public Task OnPost()
         {
             var par = new Dictionary<string, string>();
-            par.Add("Manufacturer", Request.Form["Manufacturer"]);
+            par.Add("manufacturer", Manufacturer);
             
             var aPiHelper = new ApiHelper(_configuration);
-            var url = aPiHelper.GetUri("AuthenticationService");
+            var url = aPiHelper.GetUri("Cars");
             var response = aPiHelper.SendApIrequest(url, Method.Post,par  );
             CarsIE = JsonConvert.DeserializeObject<List<Cars>>(response);
 

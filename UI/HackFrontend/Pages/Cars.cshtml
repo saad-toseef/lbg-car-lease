@@ -6,20 +6,18 @@
 
 <div class="inner cover">
     @{
-        <button type="submit" asp-page-handler="All">Get All</button>
+              <button asp-page="">GetAll</button>
+        <form  asp-action="post" >
+            <label>Choose a Manufacturer:</label>
 
-
-        //<form asp-page-handler="Type" asp-action="post" >
-        //    <label>Choose a Manufacturer:</label>
-
-        //    <select  id="Manufacturer">
-        //        <option value="volvo">Volvo</option>
-        //        <option value="saab" >Saab</option>
-        //        <option value="mercedes">Mercedes</option>
-        //        <option value="audi">Audi</option>
-        //    </select>
-        //    <button >Submit</button>
-        //</form>
+            <select  id="Manufacturer" asp-for="Manufacturer">
+                <option value="volvo">Volvo</option>
+                <option value="saab" >Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+            <button >Submit</button>
+        </form>
         <br />        <br />
 
         foreach (var car in Model.CarsIE)
@@ -30,7 +28,7 @@
                 <h2>Manufacturer: @car.manufacturer</h2>
                 <h2>Year: @car.year</h2>
                 <h2>Colour: @car.colour</h2>
-                <button class="btn btn-primary btn-lg" asp-page="./car" asp-route-id="@car.Id">Find out more</button>
+                <a class="btn btn-primary btn-lg" asp-page="./Car" asp-route-id="@car.Id">Find out more</a>
 
             </div>
 
