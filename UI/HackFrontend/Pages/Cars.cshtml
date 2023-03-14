@@ -6,32 +6,36 @@
 
 <div class="inner cover">
     @{
-              <button asp-page="">GetAll</button>
-        <form  asp-action="post" >
+        <button asp-page="">GetAll</button>
+        <form asp-action="post">
             <label>Choose a Manufacturer:</label>
 
-            <select  id="Manufacturer" asp-for="Manufacturer">
+            <select id="Manufacturer" asp-for="Manufacturer">
                 <option value="volvo">Volvo</option>
-                <option value="saab" >Saab</option>
+                <option value="saab">Saab</option>
                 <option value="mercedes">Mercedes</option>
                 <option value="audi">Audi</option>
             </select>
-            <button >Submit</button>
+            <button>Submit</button>
         </form>
         <br />        <br />
+               <div class="d-flex justify-content-between">
 
-        foreach (var car in Model.CarsIE)
-        {
-            <div class="col-sm-4 border " style="border-style: solid; padding:5px; background-color:#ffcc00">
-            <img src="https://www.lexautolease.co.uk/content/atom/64bd0369-dde0-4429-bd8f-59ed913de60d/content/Vehicle%20Images/i3-banner.png?id=59cc1890-eca5-4cd1-8fde-447a54f10e50"/>
+            @foreach (var car in Model.CarsIE)
+            {
+            <div class="col-sm-4 border text-center" style="border-style: solid;border-width: thin; margin:5px;">
+
+                <img src="https://www.lexautolease.co.uk/content/atom/64bd0369-dde0-4429-bd8f-59ed913de60d/content/Vehicle%20Images/i3-banner.png?id=59cc1890-eca5-4cd1-8fde-447a54f10e50" />
                 <h1>Model: @car.model</h1>
                 <h2>Manufacturer: @car.manufacturer</h2>
                 <h2>Year: @car.year</h2>
                 <h2>Colour: @car.colour</h2>
-                <a class="btn btn-primary btn-lg" asp-page="./Car" asp-route-id="@car.Id">Find out more</a>
-
+                <span class="text-center">
+                    <a class="btn btn-primary btn-lg align-content-center" style=" margin:5px" asp-page="./Car" asp-route-id="@car.Id">Find out more</a>
+                </span>
             </div>
 
-        }
+            }
+            </div>
     }
 </div>
