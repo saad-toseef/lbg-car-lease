@@ -8,21 +8,23 @@ namespace HackFrontend.Objects
     /// </summary>
     public class Cars
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int ID { get; set; }
-		public string Manufacture { get; set; }
-		public string Model { get; set; }
-		public int Year { get; set; }
-		public string Description { get; set; }
-		public string Registration { get; set; }
-		public string Colour { get; set; }
-		public DateTime ContractEnd { get; set; }
-		public int Term { get; set; }
-		public int HighestRecordedMileage { get; set; }
-		public DateTime HRMDate { get; set; }
-		public string FuelType { get; set; }
-		public string EngineSize { get; set; }
+       
+            public object Id { get; set; }
+            public object manufacturer { get; set; }
+            public object model { get; set; }
+            public object year { get; set; }
+            public object description { get; set; }
+            public object registration { get; set; }
+            public string colour { get; set; }
+            public string contractEnd { get; set; }
+            public object term { get; set; }
+            public object highestRecordedMileage { get; set; }
+            public object hrmDate { get; set; }
+            public object fuelType { get; set; }
+            public object engineSize { get; set; }
+            public object dayRate { get; set; }
+        
 
-	}
+    }
    
 }

@@ -22,7 +22,7 @@ namespace HackFrontend
 
         public string SendApIrequest(string url, Method method, Object @object = null)
         {
-            Uri baseUrl = new Uri("http://" + url);
+            Uri baseUrl = new Uri( url);
             RestClient client = new RestClient(baseUrl);
             RestRequest request = new RestRequest() { Method = method};
             if (@object != null)
